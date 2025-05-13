@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Roboto;
+    color: black;
+    background-attachment: fixed;
+    background-image: url("images/mountain.png");
+    flex-flow: column wrap;
+    align-items: center;
+    flex: auto;
+}
+
+
+.container-main{
+    display: flex;
+    /* border: solid black; */
+    height: 800px;
+    width: 800px;
+    margin: 75px;
+    /* backgr ound-color: #1F2937; */
+    flex-shrink: 0;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: flex-start;
+    
+}
+
+.container-background{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.gridContainer{
+    background-color: darkslategray;
+    display: flex;
+    padding: 20px;
+    
+}
