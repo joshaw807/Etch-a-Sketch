@@ -7,12 +7,10 @@ body{
     font-family: Arial, Roboto;
     color: black;
     background-attachment: fixed;
-    background-image: url("images/mountain.png");
     flex-flow: column wrap;
     align-items: center;
     flex: auto;
 }
-
 
 .container-main{
     display: flex;
@@ -37,7 +35,9 @@ body{
 
 .gridContainer{
     background-color: darkslategray;
-    display: flex;
-    padding: 20px;
-    
+    /* display: flex; */
+    width: 500px;
+    height: 500px;
+   display: grid;
 }
+
