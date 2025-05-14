@@ -1,5 +1,8 @@
 const board = document.querySelector(".gridContainer");
 const btn = document.querySelector(".setSize");
+const colorInput = document.querySelector(".colorInput")
+let color = "black";
+
 
 function createBoard(size) {
   let squares = document.querySelectorAll(".grid");
@@ -13,16 +16,16 @@ function createBoard(size) {
   for (let i = 0; i < amount; i++) {
     let grid = document.createElement("div");
     grid.classList.add("grid");
-    
+
     grid.addEventListener("mousedown", () => {
       isMouseDown = true;
     });
     grid.addEventListener("mouseup", () => {
       isMouseDown = false;
     });
-    grid.addEventListener("mouseover", () => {
+    grid.addEventListener("mouseover", (e) => {
       if (isMouseDown) {
-        grid.style.backgroundColor = "black";
+        colorSquare(e);
       }
     });
     board.insertAdjacentElement("beforeend", grid);
@@ -39,5 +42,23 @@ btn.addEventListener("click", () => {
     console.log("too many squares");
   }
 });
+
+colorInput.addEventListener("input", (e) =>{
+    color = e.target.value;
+});
+
+
+function colorSquare(e) {
+  e.target.style.backgroundColor = color;
+}
+
+function changeColor(choice) {
+  color = choice;
+}
+
+function clearColor() {
+  let squares = document.querySelectorAll(".grid");
+  squares.forEach((element) => element.style.backgroundColor = "white");
+}
 
 // function changeBoardSize(input) {}
